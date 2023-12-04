@@ -34,7 +34,7 @@ export default function ViewUser() {
               <b> <mark>Hello..! {user.name} </mark></b> 
               <ul className="list-group list-group-flush">
                 <li className="list-group m-1">
-                  <b>Name : {user.name}</b>
+                  <b>Name  hello: {user.name}</b>
                   
                 </li>
                 <li className="list-group m-1">
