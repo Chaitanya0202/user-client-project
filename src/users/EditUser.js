@@ -13,8 +13,10 @@ export default function EditUser() {
     password: "",
     phone: "",
   });
+  
 
   const { name, email, password, phone } = user;
+  const BASE_URL="https://user-server-project-production.up.railway.app"
 
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -25,13 +27,13 @@ export default function EditUser() {
  
   const onSubmitHandler=async (e)=>{
     e.preventDefault();
-    await axios.put(`http://localhost:8080/updateUser/${id}`,user);
+    await axios.put(`${BASE_URL}/updateUser/${id}`,user);
     navigate("/")
 
   }
 
   const loadUser=async()=>{
-    const result=await axios.get(`http://localhost:8080/getById/${id}`)
+    const result=await axios.get(`${BASE_URL}/getById/${id}`)
     setUser(result.data)
     
   }

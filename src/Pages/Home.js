@@ -9,12 +9,13 @@ export default function Home() {
         
         loaduser();
     },[])
+    const BASE_URL="https://user-server-project-production.up.railway.app"
     const loaduser=async()=>{
-        const result =await axios.get("http://localhost:8080/getAllUser")
+        const result =await axios.get(`${BASE_URL}/getAllUser`)
         setUsers(result.data)
     }
     const deleteUser=async(id)=>{
-        await axios.delete(`http://localhost:8080/deleteUserById/${id}`)
+        await axios.delete(`${BASE_URL}/deleteUserById/${id}`)
         loaduser()
     }
   return (

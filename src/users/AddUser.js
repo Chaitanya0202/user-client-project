@@ -11,6 +11,7 @@ export default function AddUser() {
     password: "",
     phone: "",
   });
+  const BASE_URL="https://user-server-project-production.up.railway.app"
 
   const { name, email, password, phone } = user;
 
@@ -22,7 +23,7 @@ export default function AddUser() {
 
   const onSubmitHandler=async (e)=>{
     e.preventDefault();
-    await axios.post("http://localhost:8080/saveUser",user);
+    await axios.post(`${BASE_URL}/saveUser`,user);
     navigate("/")
 
   }

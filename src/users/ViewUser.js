@@ -17,8 +17,9 @@ export default function ViewUser() {
   useEffect(() => {
     loadUser();
   },[]);
+  const BASE_URL="https://user-server-project-production.up.railway.app"
   const loadUser = async () => {
-    const result=await axios.get(`http://localhost:8080/getById/${id}`);
+    const result=await axios.get(`${BASE_URL}/getById/${id}`);
     setUser(result.data);
     
   };
@@ -34,7 +35,7 @@ export default function ViewUser() {
               <b> <mark>Hello..! {user.name} </mark></b> 
               <ul className="list-group list-group-flush">
                 <li className="list-group m-1">
-                  <b>Name  hello: {user.name}</b>
+                  <b>Name  : {user.name}</b>
                   
                 </li>
                 <li className="list-group m-1">
